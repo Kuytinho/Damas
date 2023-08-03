@@ -15,8 +15,8 @@ function Header() {
 
   return (
     <div className={`header ${color}`}>
-      <p>Nome: {name}</p>
-      <p>Apelido: {nickname}</p>
+      <p>Olá {name}!</p>
+      <p>Ou devo chama-lo de {nickname}?</p>
     </div>
   );
 }

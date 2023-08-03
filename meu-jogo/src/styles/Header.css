@@ -2,8 +2,19 @@
     padding: 10px;
     color: white;
     text-align: center;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
   }
   
+  .header:hover {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+
   /* Estilos para as cores */
   .header.Azul {
     background-color: blue;

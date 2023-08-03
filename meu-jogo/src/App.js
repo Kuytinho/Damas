@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Damas from './pages/Damas';
+import './App.css'
 
 function App() {
   return (
