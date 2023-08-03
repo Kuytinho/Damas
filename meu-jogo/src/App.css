@@ -1,0 +1,36 @@
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(8, 50px); /* Cria 8 colunas de quadrados */
+  grid-template-rows: repeat(8, 50px); /* Cria 8 linhas de quadrados */
+  /* border: 2px solid #000; */
+  margin: 0 auto;
+}
+
+.quadrado {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.branco {
+  background-color: #f0d9b5;
+}
+
+.preto {
+  background-color: #b58863;
+  /* color: white; */
+}
