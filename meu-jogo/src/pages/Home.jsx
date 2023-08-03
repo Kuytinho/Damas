@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 import Context from '../Provider/Context';
 
@@ -6,25 +7,32 @@ function Home() {
   const [showDamas, setShowDamas] = useState(false);
   const [showGame, setShowGame] = useState(false);
   const [showInputs, setShowInputs] = useState(false);
-  const { setUser } = useContext(Context); 
+  const { setUser } = useContext(Context);
 
   const [name, setName] = useState('');
   const [nickname, setNickname] = useState('');
   const [color, setColor] = useState('');
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
       setShowDamas(true);
-    }, 2000);
+    }, 1000);
 
     setTimeout(() => {
       setShowGame(true);
-    }, 4000);
+    }, 2000);
 
     setTimeout(() => {
       setShowInputs(true);
-    }, 6000);
+    }, 3000);
   }, []);
+
+  useEffect(() => {
+    // Verifica se todos os campos estão preenchidos
+    setIsButtonDisabled(!(name && nickname && color));
+  }, [name, nickname, color]);
 
   const handleSave = () => {
     const updatedUser = {
@@ -33,7 +41,8 @@ function Home() {
       color: color,
     };
 
-    setUser(updatedUser); // Atualiza o estado user no contexto
+    setUser(updatedUser);
+    setIsSaved(true)
   };
 
   return (
@@ -65,7 +74,14 @@ function Home() {
               <option value="Branco">Branco</option>
               <option value="Rosa">Rosa</option>
             </select>
-            <button onClick={handleSave}>Salvar</button>
+                <button onClick={handleSave} disabled={isButtonDisabled}>
+                Salvar
+                </button>
+            <Link to="/damas">
+                <button disabled={!isSaved}>
+                Jogar
+                </button>
+            </Link>
           </div>
         </div>
       )}

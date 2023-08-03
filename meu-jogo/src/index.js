@@ -1,16 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import Provider from './Provider/Provider';
 
-ReactDOM.render(
+const rootElement = document.getElementById('root');
+
+// Use createRoot ao invés de ReactDOM.render
+createRoot(rootElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider> {/* Coloque o UserProvider aqui */}
+      <Provider>
         <App />
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );

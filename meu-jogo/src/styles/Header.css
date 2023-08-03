@@ -1,0 +1,38 @@
+.header {
+    padding: 10px;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Estilos para as cores */
+  .header.Azul {
+    background-color: blue;
+  }
+  
+  .header.Amarelo {
+    background-color: yellow;
+    color: black;
+  }
+  
+  .header.Vermelho {
+    background-color: red;
+  }
+  
+  .header.Verde {
+    background-color: green;
+  }
+  
+  .header.Preto {
+    background-color: black;
+    color: white; /* Altera a cor do texto para branco para melhor visibilidade */
+  }
+  
+  .header.Branco {
+    background-color: white;
+    color: black; /* Altera a cor do texto para preto para melhor visibilidade */
+  }
+  
+  .header.Rosa {
+    background-color: pink;
+  }
+  
