@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import App from './App'; // Importe o componente principal da sua aplicação
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import Provider from './Provider/Provider';
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider> {/* Coloque o UserProvider aqui */}
+        <App />
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>,
   document.getElementById('root')
 );
