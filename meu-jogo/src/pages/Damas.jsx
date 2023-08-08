@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Importe o Link
 import Header from '../components/Header';
 import '../styles/Damas.css';
 
@@ -11,7 +12,12 @@ function Damas() {
         const isPiece = (row + col) % 2 === 1; // Calcula se a célula deve ter uma peça
         const classNames = isPiece ? 'piece' : '';
 
-        cells.push(<div key={`${row}-${col}`} className={`cell ${classNames}`}></div>);
+        // Adicione o componente Link para cada célula
+        cells.push(
+          <Link key={`${row}-${col}`} to="/teste" className="cell-link">
+            <div className={`cell ${classNames}`}></div>
+          </Link>
+        );
       }
     }
 
@@ -21,11 +27,11 @@ function Damas() {
   return (
     <div>
       <Header />
-      <div className="container"> {/* Adicione a classe container */}
+      <div className="container">
         <h2>Damas</h2>
-            <div className="board">
-                {renderBoard()}
-            </div>
+        <div className="board">
+          {renderBoard()}
+        </div>
       </div>
     </div>
   );
